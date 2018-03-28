@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/static/theme.css" type="text/css"> </head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+<body class="">
+
+  <div class="text-white bg-warning p-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <div class="row">
+            <div class="col-md">
+              <h3>แบบฟอร์มรายละเอียดเบิกค่าตรวจข้อสอบคณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#" class="active nav-link"><i class=""></i>&nbsp;Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">View</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Edit</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-1 offset-md-5">
+          <button type="submit" href = "/logout" class="btn btn-warning">Log out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="px-3">
+    <div class="container">
+      <div class="card">
+        <div class="card-body px-5">
+          <div class="row border-primary">
+            <div class="col-md-2">
+              <form class="">
+                <div class="form-group"> 
+                <label>รหัสวิชา</label>
+                  <input type="Course" class="form-control border border-info"> </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row border-primary">
+            <div class="col-md-3">
+              <form class="">
+                <div class="form-group"> 
+                <label>ประเภทข้อสอบ</label> 
+                <select class="form-control">
+                        <option class="form-control border border-info" value="volvo">อัตนัย</option>
+                        <option class="form-control border border-info" value="saab">ปรนัย</option>
+                        <option class="form-control border border-info"value="mercedes">สัมภาษณ์+ปฏิบัติ</option>
+                        </select> </div>
+              </form>
+            </div>
+          </div>
+          <div class="row border-primary">
+            <div class="col-md-3">
+              <form class="">
+                <div class="form-group"> 
+                <label for="exampleInputEmail1">ประเภทการสอน</label> 
+                <select class="form-control" name = "typeTea">               
+                     <option value="เป็นวิชาสอนท่านเดียว">เป็นวิชาสอนท่านเดียว</option>
+                      <option value="เป็นวิชาสอนร่วม">เป็นวิชาสอนร่วม</option>
+                    </select> </div>
+              </form>
+            </div>
+          </div><label for="exampleInputEmail1"></label>
+          <div class="row">
+            <div class="col-md-12 ">
+              <form name="frmMain" method="post">
+                <table class="table" id="tbExp" action="myFunction()">
+                  <tbody>
+                    <tr>
+                      <th class="text-center">
+                        <br>ลำดับที่</th>
+                      <th class="text-center">
+                        <br>จำนวนนักศึกษา
+                        <br>&nbsp;ที่เข้าสอบ(คน)</th>
+                      <th class="text-center" text-align = "center">
+                        <br>ชื่อ-นามสกุล ผู้ตรวจข้อสอบ</th>
+                      <th class="text-center">สัดส่วนการตรวจข้อสอบ<br>ของอาจารย์แต่ละท่าน<br>ใน 1 วิชา(คิดเป็น %)</th>
+                    </tr>
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="1" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu1" size="8" >
+                      </td>
+                      <td > 
+                        <input class="form-control" id="name1" size="8" value="">
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen1" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="2" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu2" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name2" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen2" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="3" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu3" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name3" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen3" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="4" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu4" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name4" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen4" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="5" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu5" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name5" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen5" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="6" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu6" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name6" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen6" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="7" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu7" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name7" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen7" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="8" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu8" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name8" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen8" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="9" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu9" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name9" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen9" >
+                        </form>             
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>  
+                      <form>
+                        <input class="form-control"  id="num" value="10" size="4">
+                      </form>                                     
+                      </td>
+                      <td>
+                      <input class="form-control" id="TotalStu10" size="8" >
+                      </td>
+                      <td >                    
+                        <input class="form-control" id="name10" size="8" >
+                      </td>
+                      <td> 
+                        <form> 
+                          <input class="form-control" size = "4" id="Percen10" >
+                        </form>             
+                      </td>
+                    </tr>
+                </table>
+                <div class="col-md-12">
+                  <input name="hdnMaxLine" type="hidden" value="0"> </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md col-md-6">
+                  
+                </div>
+                <div class="col-md col-md-6">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6"></div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-6 py-3">
+              <a class="btn btn-block btn-lg text-white btn-success" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><b class="text-white">บันทึก</b></a>
+            </div>
+            <div class="col-md-6 py-3">
+              <a class="btn btn-lg btn-block btn-warning" href="#"><b class="text-white">ยกเลิก</b></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>      
+    </div>
+  </div> 
+  
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/action_page.php"> 
+  <div class="px-3 pt-4">
+    <div class="container2">
+      <div class="card">
+        <div class="card-body px-5">
+          
+          
+          <label for="exampleInputEmail1"></label>
+          <div class="row">
+            <div class="col-md-12">
+             <p class="lead">กรุณาตรวจสอบความถูกต้อง</p>
+             <p class="lead">รหัสวิชา    :&ensp;a </p>
+              <ol class="">
+    <li>รหัสวิชา    &ensp;&ensp;&ensp;&ensp;:&ensp;a </li>
+     <li>ประเภทการสอบ  :&ensp;b</li>
+    <li>ประเภทการสอน  :&ensp;c</li>
+    <li>Three</li>
+  </ol><form name="frmMain" method="post">
+                <table class="table" id="tbExp" action="myFunction()">
+                  <tbody></tbody>
+                </table>
+                <div class="col-md-12">
+                  <input name="hdnMaxLine" type="hidden" value="0"> </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"></div>
+            
+            
+          </div>
+        </div>
+        </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6 py-3">
+              <a onclick="document.getElementById('id01').style.display='none'" class="btn btn-block btn-lg text-white btn-success" href="#"><b class="text-white">Save</b></a>
+            </div>
+            <div class="col-md-6 py-3">
+              <a onclick="document.getElementById('id01').style.display='none'" class="btn btn-lg btn-block btn-warning" href="#"><b class="text-white">Cancel</b></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div> 
+    </div>
+  </div>
+  
+    </form>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
