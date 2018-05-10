@@ -25,11 +25,11 @@ SECRET_KEY = '-*zw^9^+ofz0*uc4v5sfg)@a2r3e(v2tm+#x@nsbr#iq1fzw)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-SOCIAL_AUTH_TU_KEY = 'oyABlKBbhF7GHkO3mIIzG5R4mx8GLGZxIj5WLhkK'
-SOCIAL_AUTH_TU_SECRET = 'BeCg8rdK6dqBrG95mSKmauvWgLVPgMGn366iaXzjxNsu1y2UyaRK4XjansDq1Cf4quQwSY3dEVl5r3DUV7Gs7k0y02q18v82mNZM6XWMQdfVK6fG2NKwYKoCeqY25qQF'
+SOCIAL_AUTH_TU_KEY = 'ZVtaizivcKdtMGjojcX7UkprEDhKch8fi6GU5WVD'
+SOCIAL_AUTH_TU_SECRET = '32azvESeVXN7OD0DaLoJI47BzSmpdy5JXDpmm4KNS69iH0erlf4bA4j0pfgG754a6Cc0Ewjg8IpHOFPos55jW4EwhYJHfyDjKMnmTyQ06cmvT7xEU3EdaFdh6pW9Jdfz'
 
 ALLOWED_HOSTS = []
-LOGIN_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = '/form'
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'social_django',
     'tuauth',
+    'ordered_model',
 ]
 #LOGIN_REDIRECT_URL = '/form'
 
@@ -62,6 +63,7 @@ SOCIAL_AUTH_PIPELINE = [
 
 AUTHENTICATION_BACKENDS = (
     'tuauth.backend.TUOAuth2',
+    ('django.contrib.auth.backends.ModelBackend')
 )
 
 MIDDLEWARE = [
@@ -141,19 +143,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     #'/var/www/static/',
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-
+#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), '/desktop/sciproject/static/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
+   
 }

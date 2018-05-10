@@ -15,22 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from exam.urls import router
-from exam import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from exam.urls import router
+from exam import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
-    path('form/', views.form, name='form2'),
+    path('form/', views.LacListView, name='LacListView'),
+    path('Dowmload/', views.SubjectListView, name='SubjectListView'),
     path('jso/', views.jo, name='json'),
-    path('login/', views.login, name='login'),
-    path('test/', views.test, name='test'),
     path('oauth/', include('social_django.urls', namespace='social')),
-    path(r'logout/', auth_views.logout, {'next_page': '/login'}, name='logout'),
-     path('home/', views.form, name='form2'),
-
-]
+    path(r'logout/', auth_views.logout, {'next_page': '/form'}, name='logout'),
+    path('export/', views.export, name='export'),
+    path('saved/', views.saved, name='saved'),
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
